@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mulan</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+  <!--шрифт-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!--голова сайта-->
+  <header>
+    <a href="#" class="logo"> <img src="img/logo.png" alt="logo"></a>
+    <ul class="navigation">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">TV Shows</a></li>
+      <li><a href="#">Movies</a></li>
+      <li><a href="#">Latest</a></li>
+      <li><a href="#">My List</a></li>
+    </ul>
+
+    <div class="search">
+      <input type="text" placeholder="Search">
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+  </header>
+
+  <!--баннер-->
+  <div class="banner">
+    <img src="img/bg.jpg" alt="bg" class="bg">
+    <div class="content">
+      <img src="img/name.png" alt="name" class="movieTitle">
+      <h4>
+        <span>2020</span>
+        <span><i>12+</i></span>
+        <span>1h 55min</span>
+        <span>Action</span>
+      </h4>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error itaque architecto adipisci nobis eligendi sapiente, eius doloremque, voluptatibus voluptates voluptate fugiat aut incidunt vitae voluptatum a est! Unde, ipsa ad!Error itaque architecto adipisci nobis eligendi sapiente, eius doloremque, voluptatibus voluptates voluptate fugiat aut incidunt vitae voluptatum a est! Unde, ipsa ad!</p>
+      <div class="buttons">
+        <a href="#"><i class="fa fa-play" aria-hidden="true"></i>Play</a>
+        <a href="#"><i class="fa fa-plus" aria-hidden="true"></i>My List</a>
+      </div>
+    </div>
+    <!--кнопка активации видео-->
+    <a href="#" class="play" onclick="toggleVideo();"><img src="img/play.png" alt="play">Watch Trailer</a>
+  </div>
+
+  <!--трейлер-->
+  <div class="trailer">
+    <!--видео-->
+    <video src="img/mulan.mp4" controls="true"></video>
+    <!--кнопка закрывания окна с видео-->
+    <img src="img/close.png" alt="close" class="close" onclick="toggleVideo();">
+  </div>
+
+  <!--js-->
+  <script>
+    function toggleVideo(){
+      //включение видео
+      const trailer = document.querySelector('.trailer');
+      //кнопка закрывания видео
+      const video = document.querySelector('video');
+      //функция включения
+      trailer.classList.toggle('active')
+      //функции закрытия видео
+      video.currentTime = 0;
+      video.pause();
+    }
+  </script>
+</body>
+</html>
